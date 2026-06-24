@@ -1,8 +1,8 @@
 {
-  "token": "c55347c423184f02813280701d67161a91bb654b166d6320d0e047e6ff100141",
-  "room": "6a3440c4192029dd76b6412a",
+  "token": "",
+  "room": "",
   "owner": "NXLN",
-  "welcome_message": ["hello","wooh"],
-  "bye_message": ["bye","goodbye"],
-  "admins": ["admin1","admin2"]
+  "welcome_message": ["",""],
+  "bye_message": ["",""],
+  "admins": ["NXLN",""]
 }
