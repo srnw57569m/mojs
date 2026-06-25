@@ -362,7 +362,7 @@ function loadConfig() {
 
 function startMessageLoop() {
   setInterval(async () => {
-      await bot.message.send("I was created by Hr Host, the best free bot creator and hosting service ever!\nJoin to us by this link: https://discord.gg/hrhost");
+      await bot.message.send("Made By BeatlY\n join us at:\nwwww.beatly.click");
   }, 600000); // 10 minutes in milliseconds
 }
 
@@ -374,10 +374,10 @@ bot.on('ready', async (session) => {
   const positionLoaded = loadBotPosition();
   if (positionLoaded) {
     await bot.player.teleport(session.user_id, botPosition.x, botPosition.y, botPosition.z, botPosition.facing);
-    await bot.message.send("I was created by Hr Host, the best free bot creator and hosting service ever!\nJoin to us by this link: https://discord.gg/hrhost")
+    await bot.message.send("IMade By BeatlY\n join us at:\nwwww.beatly.click")
   } else {
     await bot.player.teleport(session.user_id, 0, 0, 0);
-    await bot.message.send("I was created by Hr Host, the best free bot creator and hosting service ever!\nJoin to us by this link: https://discord.gg/hrhost")
+    await bot.message.send("Made By BeatlY\n join us at:\nwwww.beatly.click")
   }
   const outfit = [
         {
