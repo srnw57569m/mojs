@@ -465,7 +465,7 @@ bot.on('ready', async (session) => {
           active_palette: -1
         }
       ];
-      bot.outfit.change(outfit).catch(e => console.error(e));
+      //bot.outfit.change(outfit).catch(e => console.error(e));
   });
 
 // Handle tip events
