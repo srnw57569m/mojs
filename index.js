@@ -507,7 +507,7 @@ bot.on('chatCreate', async (user, message) => {
   if (user.username === config.owner || user.username === config.admins) {
 
     // /shutdown command
-    if (message.startsWith("/shutdown")) {
+    if (message.startsWith("!shutdown")) {
         await bot.message.send("Initializing shut down.");
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds
         await bot.message.send("Shutting down.");
@@ -516,7 +516,7 @@ bot.on('chatCreate', async (user, message) => {
     }
 
     // /setpos command
-    if (message.startsWith("/setpos")) {
+    if (message.startsWith("!setpos")) {
         console.log(`[DEBUG] Attempting to retrieve position for user ID: ${user.id}`);
   
         try {
@@ -564,7 +564,7 @@ bot.on('chatCreate', async (user, message) => {
     }
 
     // /refresh command
-    if (message.startsWith("/refresh")) {
+    if (message.startsWith("!refresh")) {
         await bot.message.send("Refreshing the bot. Please wait...");
         await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 3 seconds
   
@@ -594,7 +594,7 @@ bot.on('chatCreate', async (user, message) => {
         }
     }
 
-    if (message.toLowerCase().startsWith("/tele ")) {
+    if (message.toLowerCase().startsWith("!tele ")) {
       const args = message.split(" ").slice(1);
       
       const dynamicPositions = loadDynamicPositions();
@@ -634,7 +634,7 @@ bot.on('chatCreate', async (user, message) => {
           await bot.whisper.send(user.id, "Invalid position coordinates. Please check the position file.");
       }
     }    
-    if (message.startsWith("/here ")) {
+    if (message.startsWith("!here ")) {
       const parts = message.split(" ");
       if (parts.length < 2 || !parts[1].startsWith("@")) {
           await bot.whisper.send(user.id, "Usage: /here @username");
@@ -675,7 +675,7 @@ bot.on('chatCreate', async (user, message) => {
           await bot.whisper.send(user.id, "An error occurred while teleporting the user.");
       }
   }
-    if (lowerMessage.startsWith("/create tele ")) {
+    if (lowerMessage.startsWith("!create tele ")) {
       
       const positionName = parts[2];
       const restricted = parts.length > 3 && parts[3].toLowerCase() === "restricted";
@@ -692,7 +692,7 @@ bot.on('chatCreate', async (user, message) => {
       }
     }
 
-    else if (lowerMessage.startsWith("/remove tele ")) {
+    else if (lowerMessage.startsWith("!remove tele ")) {
       
       const positionName = message.substring(13).trim();
       if (deleteCreatedPosition(positionName)) {
