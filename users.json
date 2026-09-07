@@ -1,0 +1,92 @@
+{
+  "6540bd0f7edebe287ada02a6": {
+    "registered": true,
+    "conversationId": "1_on_1:6540bd0f7edebe287ada02a6:6a96c237efb2609c84d1ee5a",
+    "language": "ar",
+    "username": "NXLN",
+    "xp": 197,
+    "totalXp": 722,
+    "level": 4,
+    "levelStats": {
+      "chat": 515,
+      "emote": 62,
+      "direct": 145
+    }
+  },
+  "6a1ed192a58d440c745f8e17": {
+    "registered": true,
+    "conversationId": "1_on_1:6a1ed192a58d440c745f8e17:6a96c237efb2609c84d1ee5a",
+    "language": null,
+    "username": "ilmond_4",
+    "xp": 0,
+    "totalXp": 0,
+    "level": 1,
+    "levelStats": {}
+  },
+  "6a674ae8fc09619ec10c89b2": {
+    "registered": false,
+    "conversationId": null,
+    "language": null,
+    "username": null,
+    "xp": 65,
+    "totalXp": 65,
+    "level": 1,
+    "levelStats": {
+      "chat": 65
+    }
+  },
+  "6128f56612bbbf7b4b602e87": {
+    "registered": false,
+    "conversationId": null,
+    "language": null,
+    "username": null,
+    "xp": 25,
+    "totalXp": 125,
+    "level": 2,
+    "levelStats": {
+      "chat": 125
+    }
+  },
+  "6982a9dd82a94747130f1e10": {
+    "registered": true,
+    "conversationId": "1_on_1:6982a9dd82a94747130f1e10:6a96c237efb2609c84d1ee5a",
+    "language": null,
+    "username": "0Z0_",
+    "xp": 107,
+    "totalXp": 207,
+    "level": 2,
+    "levelStats": {
+      "chat": 190,
+      "direct": 15,
+      "emote": 2
+    }
+  },
+  "6734a555ced3cc170e5a3273": {
+    "registered": true,
+    "conversationId": "1_on_1:6734a555ced3cc170e5a3273:6a96c237efb2609c84d1ee5a",
+    "language": null,
+    "username": "iiReo",
+    "xp": 59,
+    "totalXp": 159,
+    "level": 2,
+    "levelStats": {
+      "chat": 140,
+      "direct": 15,
+      "emote": 4
+    }
+  },
+  "66b7d485e57cb570575cfbfc": {
+    "registered": true,
+    "conversationId": "1_on_1:66b7d485e57cb570575cfbfc:6a96c237efb2609c84d1ee5a",
+    "language": null,
+    "username": "iadlyy",
+    "xp": 7,
+    "totalXp": 107,
+    "level": 2,
+    "levelStats": {
+      "direct": 30,
+      "emote": 2,
+      "chat": 75
+    }
+  }
+}

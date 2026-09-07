@@ -1,0 +1,19 @@
+{
+    "name": "highrise-bot",
+    "version": "1.0.0",
+    "description": "A Highrise bot made with highrise.sdk",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "colors": "^1.4.0",
+        "dotenv": "^17.4.2",
+        "highrise.bot": "^2.8.1",
+        "highrise.sdk": "latest"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}

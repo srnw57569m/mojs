@@ -1,0 +1,10 @@
+{
+  "token": "157754e9b44a97814f3a09a75389ee8f558ca371c7e3e1348456d87c85760a3f",
+  "room": "686c5b1d9668a3cb40e27951",
+  "owner": "NXLN",
+  "language": "",
+  "admins": ["NXLN"],
+  "welcome_message": ["Welcome!"],
+  "bye_message": ["Goodbye!"],
+  "emote_aliases": {}
+}

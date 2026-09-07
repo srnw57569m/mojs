@@ -1,0 +1,13 @@
+const {getUserData,saveUsers,hasConversation}=require("../services/users");
+const {isOwner}=require("../services/permissions");
+const {setBotLanguage,isBotLanguageConfigured}=require("../services/language");
+const {normalizeText}=require("../utils/text");
+const {t}=require("../services/i18n");
+const log=require("../utils/logger");
+async function sendDirectConversation(bot,id,text){if(!id)return false;try{const r=await bot.direct.send(id,text);if(r&&!r.ok){log.warn("Direct",r.error||"Failed");return false;}return true;}catch(e){log.error("Direct",e.message);return false;}}
+async function askForRegistration(bot,id){await bot.whisper.send(id,t("registrationHint","ar"));}
+async function requireRegistration(bot,user){if(hasConversation(user.id))return true;await askForRegistration(bot,user.id);return false;}
+function parseLanguage(v){const x=normalizeText(v||"");if(["ar","arabic","عربي","العربية"].includes(x))return "ar";if(["en","english","انجليزي","إنجليزي","الانجليزية","الإنجليزية"].includes(x))return "en";return null;}
+async function handleRegistration(bot,user,message,conversation){const content=String(message?.content||"").trim();const normalized=normalizeText(content);const data=getUserData(user.id);data.username=user.username||data.username||null;if(normalized==="register"||normalized==="تسجيل"){data.registered=true;data.conversationId=conversation.id;saveUsers();if(isOwner(user)&&!isBotLanguageConfigured()){await sendDirectConversation(bot,conversation.id,t("languageSetup","ar"));return true;}await sendDirectConversation(bot,conversation.id,t("registered"));return true;}if(isOwner(user)){const language=parseLanguage(normalized);if(language){data.registered=true;data.conversationId=conversation.id;data.language=language;saveUsers();setBotLanguage(language);await sendDirectConversation(bot,conversation.id,t("languageChanged",language));return true;}}return false;}
+async function handleLanguageCommand(bot,user,message,conversation){if(!isOwner(user))return false;const cmd=normalizeText(message.command()||"");if(cmd!=="!language"&&cmd!=="!lang")return false;const language=parseLanguage(message.args(0));if(!language){await sendDirectConversation(bot,conversation.id,"Use: !language ar\nor\n!language en");return true;}const data=getUserData(user.id);data.registered=true;data.conversationId=conversation.id;data.language=language;saveUsers();setBotLanguage(language);await sendDirectConversation(bot,conversation.id,t("languageChanged",language));return true;}
+module.exports={askForRegistration,requireRegistration,handleRegistration,handleLanguageCommand,parseLanguage};
